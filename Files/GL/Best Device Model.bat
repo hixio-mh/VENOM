@@ -1,23 +1,23 @@
 @echo off
 chcp 65001 >nul
-Title PILOT TOOL 
-color 9
+Title PILOT TOOL  
+color 5
    
 :Success
 cls
 ECHO ------------------------------------------------------------------------------------------------------------------------
-echo.
-echo.
+ECHO.
+ECHO.
 ECHO                                   ██████╗     ██╗    ██╗          ██████╗     ████████╗
-echo                                   ██╔══██╗    ██║    ██║         ██╔═══██╗    ╚══██╔══╝ 
-echo                                   ██████╔╝    ██║    ██║         ██║   ██║       ██║         
-echo                                   ██╔═══╝     ██║    ██║         ██║   ██║       ██║          
-echo                                   ██║         ██║    ███████╗    ╚██████╔╝       ██║   
-echo                                   ╚═╝         ╚═╝    ╚══════╝     ╚═════╝        ╚═╝                                      
+ECHO                                   ██╔══██╗    ██║    ██║         ██╔═══██╗    ╚══██╔══╝ 
+ECHO                                   ██████╔╝    ██║    ██║         ██║   ██║       ██║         
+ECHO                                   ██╔═══╝     ██║    ██║         ██║   ██║       ██║          
+ECHO                                   ██║         ██║    ███████╗    ╚██████╔╝       ██║   
+ECHO                                   ╚═╝         ╚═╝    ╚══════╝     ╚═════╝        ╚═╝                                      
 ECHO.
 ECHO ------------------------------------------------------------------------------------------------------------------------
 ECHO.
-ECHO                                                 Logged in as [92m%USERNAME%[1m
+ECHO                                                 Logged in as %USERNAME%
 ECHO.
 REM Add registry entries for device model
 REG ADD HKEY_CURRENT_USER\Software\Tencent\MobileGamePC /f /v VMDeviceManufacturer /t REG_SZ /d ASUS
