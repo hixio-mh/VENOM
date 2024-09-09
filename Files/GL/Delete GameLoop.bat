@@ -1,25 +1,24 @@
 @echo off
 chcp 65001 >nul
-Title PILOT TOOL 
-color 9
+Title PILOT TOOL  
+color 5
    
-:Menu
+:Success
 cls
 ECHO ------------------------------------------------------------------------------------------------------------------------
-echo.
-echo.
+ECHO.
+ECHO.
 ECHO                                   ██████╗     ██╗    ██╗          ██████╗     ████████╗
-echo                                   ██╔══██╗    ██║    ██║         ██╔═══██╗    ╚══██╔══╝ 
-echo                                   ██████╔╝    ██║    ██║         ██║   ██║       ██║         
-echo                                   ██╔═══╝     ██║    ██║         ██║   ██║       ██║          
-echo                                   ██║         ██║    ███████╗    ╚██████╔╝       ██║   
-echo                                   ╚═╝         ╚═╝    ╚══════╝     ╚═════╝        ╚═╝                                      
+ECHO                                   ██╔══██╗    ██║    ██║         ██╔═══██╗    ╚══██╔══╝ 
+ECHO                                   ██████╔╝    ██║    ██║         ██║   ██║       ██║         
+ECHO                                   ██╔═══╝     ██║    ██║         ██║   ██║       ██║          
+ECHO                                   ██║         ██║    ███████╗    ╚██████╔╝       ██║   
+ECHO                                   ╚═╝         ╚═╝    ╚══════╝     ╚═════╝        ╚═╝                                      
 ECHO.
 ECHO ------------------------------------------------------------------------------------------------------------------------
 ECHO.
-ECHO                                                 Logged in as [92m%USERNAME%[1m
+ECHO                                                 Logged in as %USERNAME%
 ECHO.
-color 9
 :Delete GameLoop [Completely]
 cls
 echo [91mWould You Like To Delete Gameloop Completely? [Y] - Yes \ [N] - No[0m
