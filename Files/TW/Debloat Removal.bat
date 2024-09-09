@@ -1,8 +1,25 @@
 @echo off
 chcp 65001 >nul
-Title PILOT TOOL 
-color 9
-ECHO BY PILOT
+Title PILOT TOOL  
+color 5
+   
+:Success
+cls
+ECHO ------------------------------------------------------------------------------------------------------------------------
+ECHO.
+ECHO.
+ECHO                                   ██████╗     ██╗    ██╗          ██████╗     ████████╗
+ECHO                                   ██╔══██╗    ██║    ██║         ██╔═══██╗    ╚══██╔══╝ 
+ECHO                                   ██████╔╝    ██║    ██║         ██║   ██║       ██║         
+ECHO                                   ██╔═══╝     ██║    ██║         ██║   ██║       ██║          
+ECHO                                   ██║         ██║    ███████╗    ╚██████╔╝       ██║   
+ECHO                                   ╚═╝         ╚═╝    ╚══════╝     ╚═════╝        ╚═╝                                      
+ECHO.
+ECHO ------------------------------------------------------------------------------------------------------------------------
+ECHO.
+ECHO                                                 Logged in as %USERNAME%
+ECHO.
+ECHO Debloat Removal
 PowerShell -Command "Get-AppxPackage *Microsoft.GetHelp* | Remove-AppxPackage"
 PowerShell -Command "Get-AppxPackage *Microsoft.Getstarted* | Remove-AppxPackage"
 PowerShell -Command "Get-AppxPackage *Microsoft.Messaging* | Remove-AppxPackage"
