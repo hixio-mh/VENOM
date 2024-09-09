@@ -1,7 +1,7 @@
 @echo off
 chcp 65001 >nul
 Title PILOT TOOL  
-color 9 
+color 5 
 :Memory [RAM Optimization]
 cls
 echo.__________________________________________________________
@@ -34,6 +34,6 @@ echo.
 echo.═══════════════════════════════════════════════════════
 echo.  Memory Tweaks Applied, Press Any Key To Continue...  
 echo.═══════════════════════════════════════════════════════
-timeout 5
+timeout 3
 
 
