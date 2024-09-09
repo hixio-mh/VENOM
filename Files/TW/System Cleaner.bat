@@ -1,7 +1,7 @@
 @echo off
 chcp 65001 >nul
 Title PILOT TOOL  
-color 9
+color 5
    
 :Success
 cls
@@ -17,7 +17,7 @@ echo                                   ╚═╝         ╚═╝    ╚══�
 ECHO.
 ECHO ------------------------------------------------------------------------------------------------------------------------
 ECHO.
-ECHO                                                 Logged in as [92m%USERNAME%[1m
+ECHO                                                 Logged in as %USERNAME%
 ECHO.
 :System Cleaner [Takes Few Minutes]
 :: Stop Windows Explorer
