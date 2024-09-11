@@ -110,6 +110,7 @@ PowerShell -Command "Get-AppxPackage *Drawboard PDF* | Remove-AppxPackage"
 PowerShell -Command "Get-AppxPackage *WindowsFeedbackHub* | Remove-AppxPackage"
 PowerShell -Command "Get-AppxPackage *Office.OneNote* | Remove-AppxPackage"
 CLS
+
 ECHO Remove software leftovers
 reg delete "HKCR\Extensions\ContractId\Windows.ShareTarget\PackageId\ActiproSoftwareLLC.562882FEEB491_2.6.18.18_neutral__24pqs290vpjk0" /f
 reg delete "HKCR\Extensions\ContractId\Windows.BackgroundTasks\PackageId\46928bounde.EclipseManager_2.2.4.51_neutral__a5h4egax66k6y" /f
@@ -146,10 +147,11 @@ reg delete "HKCR\Extensions\ContractId\Windows.Protocol\PackageId\Microsoft.Xbox
 reg delete "HKCR\Extensions\ContractId\Windows.Protocol\PackageId\Microsoft.XboxGameOverlay_1.46.11001.0_x64__8wekyb3d8bbwe" /f
 reg delete "HKCR\Extensions\ContractId\Windows.Protocol\PackageId\Microsoft.XboxGamingOverlay_2.34.28001.0_x64__8wekyb3d8bbwe" /f
 reg delete "HKCR\Extensions\ContractId\Windows.Protocol\PackageId\Microsoft.XboxSpeechToTextOverlay_1.17.29001.0_x64__8wekyb3d8bbwe" /f
-CLS
+
 ECHO Uninstall OneDrive
 %SystemRoot%\SysWOW64\OneDriveSetup.exe /uninstall
 %SystemRoot%\System32\OneDriveSetup.exe /uninstall
+
 ECHO Delete Mozilla Firefox Files
 del "C:\Program Files\Mozilla Firefox\crashreporter.exe" /f /q
 del "C:\Program Files\Mozilla Firefox\crashreporter.ini" /f /q
@@ -158,6 +160,7 @@ del "C:\Program Files\Mozilla Firefox\maintenanceservice_installer.exe" /f /q
 del "C:\Program Files\Mozilla Firefox\minidump-analyzer.exe" /f /q
 del "C:\Program Files\Mozilla Firefox\pingsender.exe" /f /q
 del "C:\Program Files\Mozilla Firefox\updater.exe" /f /q
+
 ECHO Delete Scheduled Tasks
 reg delete "HKLM\Software\Microsoft\Windows NT\CurrentVersion\Schedule\TaskCache\Plain\{88088F95-5F8F-4603-8303-B2881ED6D9FD}" /f
 reg delete "HKLM\Software\Microsoft\Windows NT\CurrentVersion\Schedule\TaskCache\Plain\{8F3A56F1-410F-41E7-B9CE-4F12A1417CF1}" /f
@@ -165,14 +168,18 @@ reg delete "HKLM\Software\Microsoft\Windows NT\CurrentVersion\Schedule\TaskCache
 reg delete "HKLM\Software\Microsoft\Windows NT\CurrentVersion\Schedule\TaskCache\Tasks\{8F3A56F1-410F-41E7-B9CE-4F12A1417CF1}" /f
 reg delete "HKLM\Software\Microsoft\Windows NT\CurrentVersion\Schedule\TaskCache\Tree\Mozilla\Firefox Background Update 308046B0AF4A39CB" /f
 reg delete "HKLM\Software\Microsoft\Windows NT\CurrentVersion\Schedule\TaskCache\Tree\Mozilla\Firefox Default Browser Agent 308046B0AF4A39CB" /f
+
 ECHO Clean Up
 del /f crash*.* 
 del /f maintenance*.* 
 del /f install.log 
 del /f minidump*.* 
-cls
+
+CLS
+
+
 echo.
-echo. %b%"═══════════════════════════════════════════════════════════════════════════"
-echo.    %w%  Uninstall And Cleanup Process Completed., Press any key to continue...  
-echo. %b%"═════════════════════════════════════════════════════════════════════════"
-timeout 5
+echo.═════════════════════════════════════════════════════════════════════════
+echo.Uninstall And Cleanup Process Completed., Press any key to continue...  
+echo.═════════════════════════════════════════════════════════════════════════
+timeout 3
