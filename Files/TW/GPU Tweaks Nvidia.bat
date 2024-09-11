@@ -201,5 +201,4 @@ echo.
 echo.══════════════════════════════════════════════════════
 echo. GPU Tweaks Completed., Press Any Key To Continue...  
 echo.══════════════════════════════════════════════════════
-timeout 5
-
+timeout 3
