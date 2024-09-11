@@ -23,7 +23,7 @@ ECHO.
 :: Stop Windows Explorer
 echo Stopping Windows Explorer...
 powershell taskkill /F /IM explorer.exe
-timeout 5 /nobreak > nul
+timeout 3 /nobreak > nul
 start explorer.exe
 cls
 
@@ -124,9 +124,19 @@ cls
 :: Windows Services Management
 echo Managing Windows Services...
 net stop UsoSvc
+net stop wuauserv
+net stop cryptSvc
 net stop bits
-net stop dosvc
+net stop msiserver
+
+ren C:\Windows\SoftwareDistribution SoftwareDistribution.old
+ren C:\Windows\System32\catroot2 Catroot2.old
+
 net start wuauserv
+net start cryptSvc
+net start bits
+net start msiserver
+net stop dosvc
 sc start WinDefend
 sc config WinDefend start= auto
 net stop superfetch
