@@ -169,7 +169,6 @@ reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\ContentDeliveryManager" 
 reg add "HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\ContentDeliveryManager" /v "SoftLandingEnabled" /t reg_DWORD /d "0" /f
 reg add "HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\ContentDeliveryManager" /v "RotatingLockScreenOverlayEnabled" /t reg_DWORD /d "0" /f
 reg add "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Multimedia\SystemProfile\Tasks\Games" /v "Background Only" /t reg_SZ /d "False" /f
-reg add "HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Advanced" /v "ShowSyncProviderNotifications" /t reg_DWORD /d "0" /f
 reg add "HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\ContentDeliveryManager" /v "RotatingLockScreenEnabled" /t reg_DWORD /d "0" /f
 reg add "HKCU\Control Panel\Accessibility\MouseKeys" /v "Flags" /t reg_DWORD /d "0" /f
 reg add "HKCU\Control Panel\Accessibility\StickyKeys" /v "Flags" /t reg_DWORD /d "0" /f
@@ -177,7 +176,6 @@ reg add "HKCU\Control Panel\Accessibility\Keyboard Response" /v "AutoRepeatDelay
 reg add "HKCU\Control Panel\Accessibility\Keyboard Response" /v "AutoRepeatRate" /t reg_DWORD /d "0" /f
 reg add "HKCU\Control Panel\Accessibility\Keyboard Response" /v "BounceTime" /t reg_DWORD /d "0" /f
 reg add "HKCU\Control Panel\Accessibility\Keyboard Response" /v "DelayBeforeAcceptance" /t reg_DWORD /d "0" /f
-reg add "HKCU\Control Panel\Accessibility\Keyboard Response" /v "Flags" /t reg_DWORD /d "0" /f
 reg add "HKCU\Control Panel\Accessibility\Keyboard Response" /v "Last BounceKey Setting" /t reg_DWORD /d "0" /f
 reg add "HKCU\Control Panel\Accessibility\Keyboard Response" /v "Last Valid Delay" /t reg_DWORD /d "0" /f
 reg add "HKCU\Control Panel\Accessibility\Keyboard Response" /v "Last Valid Repeat" /t reg_DWORD /d "0" /f
@@ -672,8 +670,6 @@ reg add "HKLM\SYSTEM\CurrentControlSet\Control\Remote Assistance" /v "fAllowFull
 reg add "HKLM\SYSTEM\CurrentControlSet\Control\Remote Assistance" /v "fEnableChatControl" /t reg_DWORD /d "1" /f 
 reg add "HKLM\SYSTEM\CurrentControlSet\Control\Remote Assistance" /v "MaxTicketExpiry" /t reg_DWORD /d "6" /f 
 reg add "HKLM\SYSTEM\CurrentControlSet\Control\Remote Assistance" /v "MaxTicketExpiryUnits" /t reg_DWORD /d "1" /f   
-reg add "HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Advanced" /v "Start_TrackProgs" /t reg_DWORD /d "0" /f 
-reg add "HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Advanced" /v "Start_TrackDocs" /t reg_DWORD /d "0" /f 
 reg add "HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\ContentDeliveryManager" /v "SubscribedContent-338393Enabled" /t reg_DWORD /d "0" /f 
 reg add "HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\ContentDeliveryManager" /v "SubscribedContent-353694Enabled" /t reg_DWORD /d "0" /f 
 reg add "HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\ContentDeliveryManager" /v "SubscribedContent-353696Enabled" /t reg_DWORD /d "0" /f  
@@ -783,7 +779,6 @@ reg add "HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Advanced" /v "E
 reg add "HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Advanced" /v "DesktopLivePreviewHoverTime" /t reg_DWORD /d "0" /f 
 reg add "HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Advanced" /v "nonetcrawling" /t reg_DWORD /d "1" /f   
 reg add "HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Advanced" /v "DisallowShaking" /t reg_DWORD /d "1" /f 
-reg add "HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Advanced" /v "Start_TrackDocs" /t reg_DWORD /d "0" /f  
 reg add "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Reliability" /v "TimeStampInterval" /t reg_DWORD /d "0" /f  
 reg add "HKLM\SOFTWARE\Policies\Microsoft\Windows\QoS" /v "Tcp Autotuning Level" /t reg_SZ /d "Off" /f   
 reg add "HKLM\SOFTWARE\Policies\Microsoft\Windows\QoS" /v "Tcp Autotuning Level" /t reg_SZ /d "Highly Restricted" /f   
@@ -803,8 +798,6 @@ reg add "HKU\.DEFAULT\Control Panel\Mouse" /v "ActiveWindowTracking" /t reg_SZ /
 reg add "HKCU\Control Panel\Accessibility\Keyboard Preference" /v "On" /t reg_DWORD /d "0" /f
 reg add "HKCU\Software\Microsoft\GameBar" /v "ShowStartupPanel" /t reg_DWORD /d "0" /f  
 reg add "HKCU\Software\Microsoft\GameBar" /v "GamePanelStartupTipIndex" /t reg_DWORD /d "3" /f  
-reg add "HKCU\Software\Microsoft\GameBar" /v "AllowAutoGameMode" /t reg_DWORD /d "0" /f  
-reg add "HKCU\Software\Microsoft\GameBar" /v "AutoGameModeEnabled" /t reg_DWORD /d "0" /f  
 reg add "HKCU\Software\Microsoft\GameBar" /v "UseNexusForGameBarEnabled" /t reg_DWORD /d "0" /f     
 reg add "HKLM\SYSTEM\ControlSet001\Enum\%%a\Device Parameters" /v "SelectiveSuspendOn" /t reg_DWORD /d "00000000" /f  
 reg add "HKLM\SYSTEM\ControlSet001\Enum\%%a\Device Parameters" /v "SelectiveSuspendEnabled" /t reg_BINARY /d "0" /f   
@@ -1087,16 +1080,14 @@ reg add "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Multimedia\SystemProf
 reg add "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Multimedia\SystemProfile\Tasks\Games" /F /V "Scheduling Category" /T reg_SZ /d "High"  
 reg add "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Multimedia\SystemProfile\Tasks\Games" /F /V "SFIO Priority" /T reg_SZ /d "High"    
 reg add "HKCU\Software\Policies\Microsoft\Windows\EdgeUI" /F /V "DisableMFUTracking" /T reg_DWORD /d 1  
-reg add "HKLM\SOFTWARE\Policies\Microsoft\Windows\EdgeUI" /F /V "DisableMFUTracking" /T reg_DWORD /d 1  
-reg add "HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Advanced" /F /V "Start_TrackProgs" /T reg_DWORD /d 0    
+reg add "HKLM\SOFTWARE\Policies\Microsoft\Windows\EdgeUI" /F /V "DisableMFUTracking" /T reg_DWORD /d 1     
 reg add "HKCU\Control Panel\International\User Profile" /F /V "HttpAcceptLanguageOptOut" /T reg_DWORD /d 1  
 reg add "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\CapabilityAccessManager\ConsentStore\broadFileSystemAccess" /F /V "Value" /T reg_SZ /d "Deny"  
 reg add "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\CapabilityAccessManager\ConsentStore\videosLibrary" /F /V "Value" /T reg_SZ /d "Deny"  
 reg add "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\CapabilityAccessManager\ConsentStore\picturesLibrary" /F /V "Value" /T reg_SZ /d "Deny"  
 reg add "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\CapabilityAccessManager\ConsentStore\documentsLibrary" /F /V "Value" /T reg_SZ /d "Deny"    
 reg add "HKCU\Control Panel\Accessibility\MouseKeys" /F /V "Flags" /T reg_SZ /d "0"  
-reg add "HKCU\Control Panel\Accessibility\StickyKeys" /F /V "Flags" /T reg_SZ /d "0"  
-reg add "HKCU\Control Panel\Accessibility\Keyboard Response" /F /V "Flags" /T reg_SZ /d "0"  
+reg add "HKCU\Control Panel\Accessibility\StickyKeys" /F /V "Flags" /T reg_SZ /d "0"   
 reg add "HKCU\Control Panel\Accessibility\ToggleKeys" /F /V "Flags" /T reg_SZ /d "0"  
 reg add "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\DriverSearching" /F /V "SearchOrderConfig" /T reg_DWORD /d 0    
 reg add "HKLM\SOFTWARE\Policies\Microsoft\InputPersonalization" /F /V "RestrictImplicitTextCollection" /T reg_DWORD /d 1  
@@ -1388,7 +1379,6 @@ reg add "HKCU\Software\Microsoft\IME\15.0\IMETC" /v "Include Unicode Characters"
 reg add "HKCU\Software\Microsoft\IME\15.0\IMETC" /v "Enable Inline Candidate Swtch" /t reg_SZ /d "0x00000001" /f
 reg add "HKCU\Software\Microsoft\IME\15.0\IMETC" /v "Enable Warning Beep Feedback" /t reg_SZ /d "0x00000001" /f
 reg add "HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Advanced" /v "IconsOnly" /t reg_DWORD /d "0" /f
-reg add "HKCU\Control Panel\Desktop" /v "UserPreferencesMask" /t reg_BINARY /d "901038010000000" /f
 reg add "HKCU\Software\Microsoft\Windows\DWM" /v "EnableAeroPeek" /t reg_DWORD /d "0" /f
 reg add "HKCU\Control Panel\Mouse" /v "MouseSpeed" /t reg_SZ /d "0" /f
 reg add "HKCU\Control Panel\Mouse" /v MouseSensitivity /t reg_SZ /d 10 /f
@@ -1413,36 +1403,23 @@ reg add "HKLM\SOFTWARE\Microsoft\Input\Settings\ControllerProcessor\CursorMagnet
 reg add "HKLM\SOFTWARE\Microsoft\Input\Settings\ControllerProcessor\CursorMagnetism" /v MagnetismUpdateIntervalInMilliseconds /t reg_DWORD /d 1 /f
 reg add "HKLM\SOFTWARE\Microsoft\Input\Settings\ControllerProcessor\CursorMagnetism" /v VelocityInDIPSPerSecond /t reg_DWORD /d 0 /f
 reg add "HKLM\SYSTEM\CurrentControlSet\Services\mouclass\Parameters" /v MouseDataQueueSize /t reg_DWORD /d 3 /f
+reg add "HKLM\SYSTEM\CurrentControlSet\Services\mouclass" /v ImagePath /t REG_DWORD /d 0x5c0053797374656d0050006f6f74700053797374656d3300305c647976657300 /f
+reg add "HKLM\SYSTEM\CurrentControlSet\Services\kbdclass" /v ImagePath /t REG_DWORD /d 0x5c0053797374656d0050006f6f74700053797374656d3300305c6b64636c61737300 /f
+reg add "HKLM\SYSTEM\CurrentControlSet\Services\kbdclass" /v Type /t reg_DWORD /d 1 /f
+reg add "HKLM\SYSTEM\CurrentControlSet\Services\kbdclass" /v Start /t reg_DWORD /d 3 /f
+reg add "HKLM\SYSTEM\CurrentControlSet\Services\kbdclass" /v ErrorControl /t reg_DWORD /d 1 /f
+reg add "HKLM\SYSTEM\CurrentControlSet\Services\kbdclass" /v DisplayName /t reg_DWORD /d "@keyboard.inf,%kbdclass.SvcDesc%;Keyboard Class Driver" /f
 reg add "HKLM\SYSTEM\CurrentControlSet\Services\kbdclass\Parameters" /v KeyboardDataQueueSize /t reg_DWORD /d 3 /f
-reg add "HKLM\SYSTEM\CurrentControlSet\Services\kbdclass" /v ImagePath /t reg_DWORD /d hex():5c,00,53,00,79,00,73,00,74,00,65,00,6d,00,5,00,6f,00,6f,00,\
-  74,00,5c,00,53,00,79,00,73,00,74,00,65,00,6d,00,33,00,3,00,5c,00,64,00,7,\
-  00,69,00,76,00,65,00,7,00,73,00,5c,00,6b,00,6,00,64,00,63,00,6c,00,61,00,\
-  73,00,73,00,e,00,73,00,79,00,73,00,00,00 /f
-reg add "HKLM\SYSTEM\CurrentControlSet\Services\kbdclass" /v Type /t reg_DWORD /d 1
-reg add "HKLM\SYSTEM\CurrentControlSet\Services\kbdclass" /v Start /t reg_DWORD /d 3
-reg add "HKLM\SYSTEM\CurrentControlSet\Services\kbdclass" /v ErrorControl /t reg_DWORD /d 1
-reg add "HKLM\SYSTEM\CurrentControlSet\Services\kbdclass" /v DisplayName /t reg_DWORD /d "@keyboard.inf,%kbdclass.SvcDesc%;Keyboard Class Driver"
-reg add "HKLM\SYSTEM\CurrentControlSet\Services\kbdclass" /v Owners /t reg_DWORD /d =hex(7):6f,00,65,00,6d,00,31,00,33,00,e,00,69,00,6e,00,66,00,00,00,77,\
-  00,68,00,79,00,70,00,65,00,7,00,6b,00,6,00,64,00,e,00,69,00,6e,00,66,00,\
-  00,00,74,00,65,00,7,00,6d,00,6b,00,6,00,64,00,e,00,69,00,6e,00,66,00,00,\
-  00,6b,00,65,00,79,00,6,00,6f,00,61,00,7,00,64,00,e,00,69,00,6e,00,66,00,\
-  00,00,68,00,69,00,64,00,69,00,7,00,6b,00,6,00,64,00,e,00,69,00,6e,00,66,\
-  00,00,00,00,00
-reg add "HKLM\SYSTEM\CurrentControlSet\Services\kbdclass" /v Group /t reg_DWORD /d ""
-reg add "HKLM\SYSTEM\CurrentControlSet\Services\mouclass" /v ImagePath /t reg_DWORD /d hex():5c,00,53,00,79,00,73,00,74,00,65,00,6d,00,5,00,6f,00,6f,00,\
-  74,00,5c,00,53,00,79,00,73,00,74,00,65,00,6d,00,33,00,3,00,5c,00,64,00,7,\
-  00,69,00,76,00,65,00,7,00,73,00,5c,00,6d,00,6f,00,75,00,63,00,6c,00,61,00,\
-  73,00,73,00,e,00,73,00,79,00,73,00,00,00 /f
+reg add "HKLM\SYSTEM\CurrentControlSet\Services\kbdclass" /v Owners /t REG_DWORD /d 0x6f0065006d0031003300e00669006e00660000007700680079007000650007006b0064000e0069006e0066000000740065007a006d006b0064000e0069006e00660000006b00650079006f0061006400650069006e0066000000680069006400690070006b0064000e0069006e00660000000000 /f
+reg add "HKLM\SYSTEM\CurrentControlSet\Services\kbdclass" /v Group /t reg_DWORD /d "" /f
 reg add "HKLM\SYSTEM\CurrentControlSet\Services\mouclass" /v Type /t reg_DWORD /d 1 /f
 reg add "HKLM\SYSTEM\CurrentControlSet\Services\mouclass" /v Start /t reg_DWORD /d 3 /f
 reg add "HKLM\SYSTEM\CurrentControlSet\Services\mouclass" /v ErrorControl /t reg_DWORD /d 1 /f
 reg add "HKLM\SYSTEM\CurrentControlSet\Services\mouclass" /v DisplayName /t reg_DWORD /d "@msmouse.inf,%mouclass.SvcDesc%;Mouse Class Driver" /f
-reg add "HKLM\SYSTEM\CurrentControlSet\Services\mouclass" /v Owners /t reg_DWORD /d hex(7):6f,00,65,00,6d,00,31,00,36,00,e,00,69,00,6e,00,66,00,00,00,74,\
-  00,65,00,7,00,6d,00,6d,00,6f,00,75,00,e,00,69,00,6e,00,66,00,00,00,6d,00,\
-  73,00,6d,00,6f,00,75,00,73,00,65,00,e,00,69,00,6e,00,66,00,00,00,00,00 /f
-reg add "HKLM\SYSTEM\CurrentControlSet\Services\mouclass\Enum" /v 0 /t reg_DWORD /d "ACPI\\SYN019E\\4&90bd8b&0"
-reg add "HKLM\SYSTEM\CurrentControlSet\Services\mouclass\Enum" /v Count /t reg_DWORD /d 1
-reg add "HKLM\SYSTEM\CurrentControlSet\Services\mouclass\Enum" /v NextInstance /t reg_DWORD /d 1
+reg add "HKLM\SYSTEM\CurrentControlSet\Services\mouclass" /v Owners /t REG_DWORD /d 0x6f0065006d0031003600e00669006e00660000007400650007006d006d006f0075000e0069006e00660000006d0073006d006f0075007300650069006e00660000000000 /f
+reg add "HKLM\SYSTEM\CurrentControlSet\Services\mouclass\Enum" /v 0 /t reg_DWORD /d "ACPI\\SYN019E\\4&90bd8b&0" /f
+reg add "HKLM\SYSTEM\CurrentControlSet\Services\mouclass\Enum" /v Count /t reg_DWORD /d 1 /f
+reg add "HKLM\SYSTEM\CurrentControlSet\Services\mouclass\Enum" /v NextInstance /t reg_DWORD /d 1 /f
 reg add "HKLM\SYSTEM\CurrentControlSet\Services\mouclass\Parameters" /v MouseSynchIn100ns /t reg_DWORD /d 10000000 /f
 reg add "HKLM\SYSTEM\CurrentControlSet\Services\mouclass\Parameters" /v MouseResolution /t reg_DWORD /d 5 /f
 reg add "HKLM\SYSTEM\CurrentControlSet\Services\mouclass\Parameters" /v SampleRate /t reg_DWORD /d 400 /f
@@ -1451,7 +1428,6 @@ reg add "HKLM\SYSTEM\CurrentControlSet\Services\kbdclass\Parameters" /v Keyboard
 reg add "HKLM\SYSTEM\CurrentControlSet\Services\kbdclass\Parameters" /v MaximumPortsServiced /t reg_DWORD /d 3 /f
 reg add "HKLM\SYSTEM\CurrentControlSet\Services\kbdclass\Parameters" /v SendOutputToAllPorts /t reg_DWORD /d 1 /f
 reg add "HKLM\SYSTEM\CurrentControlSet\Services\kbdclass\Parameters" /v WppRecorder_TraceGuid /t reg_DWORD /d {0981f1f-f66e-485a-99a-91638f78c49} /f
-reg add "HKCU\Control Panel\Accessibility\Keyboard Response" /v Flags /t reg_SZ /d 7 /f
 reg add "HKCU\Control Panel\Accessibility\Keyboard Response" /v KeyboardDelay /t reg_DWORD /d 0 /f
 reg add "HKCU\Software\Microsoft\Input\Settings" /v InsightsEnabled /t reg_DWORD /d 0 /f
 reg add "HKLM\SYSTEM\CurrentControlSet\Services\USB" /v DisableSelectiveSuspend /t reg_DWORD /d 1 /f
@@ -1533,7 +1509,7 @@ reg add "HKCU\Software\Epic Games\Unreal Engine\Identifiers\Fortnite" /v "sg.bSm
 reg add "HKCU\Software\Epic Games\Unreal Engine\Identifiers\Fortnite" /v "sg.ViewDistanceQuality" /t reg_DWORD /d 0 /f
 reg add "HKCU\Software\Epic Games\Unreal Engine\Identifiers\Fortnite" /v "sg.GameThreadPriority" /t reg_DWORD /d 0 /f
 reg add "HKCU\System\GameConfigStore" /v "GameDVR_Enabled" /t reg_DWORD /d 0 /f
-reg add "HKCU\System\GameConfigStore" /v "GameDVR_FSEBehavior" /t reg_DWORD /d  /f
+reg add "HKCU\System\GameConfigStore" /v "GameDVR_FSEBehavior" /t reg_DWORD /d 2 /f
 reg add "HKCU\Control Panel\Mouse" /v "MouseSensitivity" /t reg_DWORD /d 10 /f
 reg add "HKCU\Control Panel\Mouse" /v "MouseSensitivity" /t reg_DWORD /d 10 /f
 reg add "HKCU\Software\Microsoft\Windows NT\CurrentVersion\AppCompatFlags\Layers" /v "Path\To\cs.exe" /t reg_SZ /d "~DISABLEMOUSEACCELERATION" /f
@@ -2289,4 +2265,4 @@ echo.
 echo.═══════════════════════════════════════════════════
 echo. FPS Tweaks Applied, Press Any Key To Continue...  
 echo.═══════════════════════════════════════════════════
-timeout 5
+timeout 3
