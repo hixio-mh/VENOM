@@ -187,4 +187,4 @@ echo.
 echo.═══════════════════════════════════════════════════════════
 echo. Processed Successfully, Please Restart Your PC...  
 echo.═══════════════════════════════════════════════════════════
-timeout 5
+timeout 3
