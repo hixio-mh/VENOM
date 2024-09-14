@@ -35,5 +35,3 @@ echo.═════════════════════════
 echo.  Memory Tweaks Applied, Press Any Key To Continue...  
 echo.═══════════════════════════════════════════════════════
 timeout 3
-
-
