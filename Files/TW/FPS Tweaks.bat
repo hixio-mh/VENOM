@@ -30,7 +30,6 @@ reg add "HKLM\SOFTWARE\Microsoft\Direct3D" /v "MMX Fast Path" /t reg_DWORD /d "1
 reg add "HKLM\SYSTEM\CurrentControlSet\Control\GraphicsDrivers" /v "TdrLevel" /t reg_DWORD /d "0" /f
 reg add "HKLM\SYSTEM\CurrentControlSet\Control\GraphicsDrivers" /v "TdrDebugMode" /t reg_DWORD /d "0" /f
 reg add "HKLM\SYSTEM\CurrentControlSet\Control\Power" /v "EnergyEstimationEnabled" /t reg_DWORD /d "0" /f
-reg add "HKLM\SYSTEM\CurrentControlSet\Control\Power" /v "CsEnabled" /t reg_DWORD /d "0" /f
 reg add "HKLM\SYSTEM\CurrentControlSet\Control\Power" /v "PerfCalculateActualUtilization" /t reg_DWORD /d "0" /f
 reg add "HKLM\SYSTEM\CurrentControlSet\Control\Power" /v "SleepReliabilityDetailedDiagnostics" /t reg_DWORD /d "0" /f
 reg add "HKLM\SYSTEM\CurrentControlSet\Control\Power" /v "EventProcessorEnabled" /t reg_DWORD /d "0" /f
@@ -160,7 +159,6 @@ reg add "HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Advanced" /v "D
 reg add "HKLM\SYSTEM\CurrentControlSet\Control\Power\EnergyEstimation\TaggedEnergy" /v "DisableTaggedEnergyLogging" /t reg_DWORD /d "1" /f
 reg add "HKLM\SYSTEM\CurrentControlSet\Control\Power\EnergyEstimation\TaggedEnergy" /v "TelemetryMaxApplication" /t reg_DWORD /d "0" /f
 reg add "HKLM\SYSTEM\CurrentControlSet\Control\Power\EnergyEstimation\TaggedEnergy" /v "TelemetryMaxTagPerApplication" /t reg_DWORD /d "0" /f
-reg add "HKCU\Control Panel\PowerCfg\GlobalPowerPolicy" /v "Policies" /t reg_BINARY /d "01000000000000001000000000000000000000000000000000000000000000c0100003303030400000004000000000000000000000084030000c01000000000000840300000001646464640000" /f
 reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\ContentDeliveryManager" /v "ContentDeliveryAllowed" /t reg_DWORD /d "0" /f
 reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\ContentDeliveryManager" /v "OemPreInstalledAppsEnabled" /t reg_DWORD /d "0" /f
 reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\ContentDeliveryManager" /v "PreInstalledAppsEnabled" /t reg_DWORD /d "0" /f
@@ -224,6 +222,7 @@ reg add "HKLM\SYSTEM\CurrentControlSet\Services\Tcpip\Parameters" /v "TcpFinWait
 reg add "HKLM\SYSTEM\CurrentControlSet\Services\Tcpip\Parameters" /v "TCPDelAckTicks" /t reg_DWORD /d "00000001" /f
 reg add "HKLM\SYSTEM\CurrentControlSet\Services\Tcpip\Parameters" /v "IPAutoconfigurationEnabled" /t reg_DWORD /d "00000000" /f
 reg add "HKLM\SYSTEM\CurrentControlSet\Services\Tcpip\Parameters" /v "DefaultTTL" /t reg_DWORD /d "38" /f
+reg add "HKLM\SYSTEM\CurrentControlSet\Services\USB\Parameters" /v "DisablePowerSaving" /t reg_DWORD /d "1" /f
 reg add "HKCR\Software\Microsoft\Windows\CurrentVersion\Internet Settings" /v "MaxConnectionsPerServer" /t reg_DWORD /d "10" /f
 reg add "HKCR\Software\Microsoft\Windows\CurrentVersion\Internet Settings" /v "MaxConnectionsPer1_0Server" /t reg_DWORD /d "10" /f
 reg add "HKEY_USERS\.DEFAULT\Software\Microsoft\Windows\CurrentVersion\Internet Settings" /v "MaxConnectionsPerServer" /t reg_DWORD /d "10" /f
@@ -722,7 +721,6 @@ reg add "HKCU\Control Panel\Desktop" /v "Win8DpiScaling" /t reg_DWORD /d "0" /f
 reg add "HKCU\Control Panel\Desktop" /v "WindowArrangementActive" /t reg_SZ /d "0" /f 
 reg add "HKCU\Control Panel\Desktop" /v "DragFullWindows" /t reg_SZ /d "1" /f 
 reg add "HKCU\Control Panel\Desktop" /v "MenuShowDelay" /t reg_SZ /d "8" /f 
-reg add "HKCU\Control Panel\Desktop" /v "MouseWheelRouting" /t reg_DWORD /d "0" /f 
 reg add "HKCU\Control Panel\Desktop" /v "Pattern" /t reg_DWORD /d "0" /f 
 reg add "HKCU\Control Panel\Desktop" /v "WindowArrangementActive" /t reg_DWORD /d "0" /f 
 reg add "HKCU\Control Panel\Desktop" /v "ScreenSaverIsSecure" /t reg_SZ /d "0" /f 
@@ -1433,7 +1431,6 @@ reg add "HKCU\Software\Microsoft\Input\Settings" /v InsightsEnabled /t reg_DWORD
 reg add "HKLM\SYSTEM\CurrentControlSet\Services\USB" /v DisableSelectiveSuspend /t reg_DWORD /d 1 /f
 reg add "HKCU\Software\Microsoft\Wisp\Touch" /v TouchGate /t reg_DWORD /d 0 /f
 reg add "HKCU\Control Panel\Mouse" /v Beep /t reg_SZ /d "No" /f
-reg add "HKCU\Control Panel\Desktop" /v MouseWheelRouting /t reg_DWORD /d TRUE /f
 reg add "HKCU\Control Panel\Desktop" /v Pattern Upgrade /t reg_SZ /d 0 /f
 reg add "HKLM\SOFTWARE\Microsoft\Input\Settings\ControllerProcessor\CursorSpeed" /v CursorSensitivity /t reg_DWORD /d 710 /f
 reg add "HKLM\SOFTWARE\Microsoft\Input\Settings\ControllerProcessor\CursorSpeed" /v CursorUpdateInterval /t reg_DWORD /d 1 /f
@@ -1500,7 +1497,6 @@ reg add "HKCU\Software\Riot Games\Riot Client" /v "pingUrl" /t reg_SZ /d "" /f
 reg add "HKLM\SYSTEM\CurrentControlSet\Control\Session Manager\PriorityControl" /v "Win3PrioritySeparation" /t reg_DWORD /d 0000008 /f
 reg add "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Multimedia\SystemProfile" /v "SystemResponsiveness" /t reg_DWORD /d 00000010 /f
 reg add "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Multimedia\WMPlayer" /v "Priority" /t reg_DWORD /d 0000000 /f
-reg add "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Multimedia\Audio" /v "Priority" /t reg_DWORD /d 00000001 /f
 reg add "HKCU\Software\Epic Games\Unreal Engine\Identifiers\Fortnite" /v "sg.ResolutionQuality" /t reg_DWORD /d 30 /f
 reg add "HKCU\Software\Epic Games\Unreal Engine\Identifiers\Fortnite" /v "sg.ShadowQuality" /t reg_DWORD /d 0 /f
 reg add "HKCU\Software\Epic Games\Unreal Engine\Identifiers\Fortnite" /v "sg.EffectsQuality" /t reg_DWORD /d 0 /f
@@ -1569,6 +1565,8 @@ reg add "HKLM\SYSTEM\CurrentControlSet\Control\Class\{4d36e968-e35-11ce-bfc1-080
 reg add "HKLM\SYSTEM\CurrentControlSet\Control\Class\{4d36e968-e35-11ce-bfc1-0800be10318}\0000" /v "RMEnableASPMDT" /t reg_DWORD /d "0" /f
 reg add "HKLM\SYSTEM\CurrentControlSet\Control\Class\{4d36e968-e35-11ce-bfc1-0800be10318}\0000" /v "RmWotHdcpEnable" /t reg_DWORD /d "0" /f
 reg add "HKLM\SYSTEM\CurrentControlSet\Control\Class\{4d36e968-e35-11ce-bfc1-0800be10318}\0000" /v "PowerSavingTweaks" /t reg_DWORD /d "0" /f
+reg add "HKLM\SYSTEM\CurrentControlSet\Control\Class\{4D36E96F-E325-11CE-BFC1-08002BE10318}\0000" /v "PnPCapabilities" /t reg_DWORD /d "0" /f
+reg add "HKLM\SYSTEM\CurrentControlSet\Control\Class\{4D36E96F-E325-11CE-BFC1-08002BE10318}\0001" /v "PnPCapabilities" /t reg_DWORD /d "0" /f
 reg add "HKLM\SYSTEM\CurrentControlSet\Control\Session Manager\kernel" /v "MitigationOptions" /t reg_BINARY /d "!mitigation_mask!" /f 
 reg add "HKLM\SYSTEM\CurrentControlSet\Control\Session Manager\kernel" /v "MitigationAuditOptions" /t reg_BINARY /d "!mitigation_mask!" /f
 reg add "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\r5apex.exe\PerfOptions" /F /V "CpuPriorityClass" /T reg_DWORD /d 3 
@@ -2246,9 +2244,16 @@ del /f mcupdate_authenticamd.dll
 wevtutil sl Microsoft-Windows-SleepStudy/Diagnostic /e:false
 wevtutil sl Microsoft-Windows-Kernel-Processor-Power/Diagnostic /e:false
 wevtutil sl Microsoft-Windows-UserModePowerService/Diagnostic /e:false
-powershell -c "Invoke-WebRequest -Uri 'https://drive.google.com/uc?export=download&id=1PG1p0fUB8kF4axXLxcdnlAINRBjTkEhb' -OutFile C:\Windows\BEST.pow"
-powercfg -import "C:\Windows\BEST.pow" 00000000-0000-0000-0000-000000000000
-powercfg -setactive 00000000-0000-0000-0000-000000000000
+powercfg -duplicatescheme e9a42b02-d5df-448d-aa00-03f14749eb61
+powercfg -changename e9a42b02-d5df-448d-aa00-03f14749eb61 "PILOT PLAN"
+powercfg -change standby-timeout-ac 0
+powercfg -change standby-timeout-dc 0
+powercfg -setactive e9a42b02-d5df-448d-aa00-03f14749eb61
+powercfg -hibernate off
+powercfg -setacvalueindex e9a42b02-d5df-448d-aa00-03f14749eb61 SUB_PROCESSOR PROCTHROTTLEMAX 100
+powercfg -setacvalueindex e9a42b02-d5df-448d-aa00-03f14749eb61 SUB_PROCESSOR PROCTHROTTLEMIN 100
+powercfg -change monitor-timeout-ac 0
+powercfg -change monitor-timeout-dc 0
 powercfg -h off
 CLS
 ECHO Adjust process priorities
