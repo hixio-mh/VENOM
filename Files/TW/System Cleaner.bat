@@ -123,11 +123,11 @@ cls
 
 :: Windows Services Management
 echo Managing Windows Services...
-net stop UsoSvc
-net stop wuauserv
-net stop cryptSvc
-net stop bits
-net stop msiserver
+net stop UsoSvc /y
+net stop wuauserv /y
+net stop cryptSvc /y
+net stop bits /y
+net stop msiserver /y
 
 ren C:\Windows\SoftwareDistribution SoftwareDistribution.old
 ren C:\Windows\System32\catroot2 Catroot2.old
@@ -136,11 +136,11 @@ net start wuauserv
 net start cryptSvc
 net start bits
 net start msiserver
-net stop dosvc
+net stop dosvc /y
 sc start WinDefend
 sc config WinDefend start= auto
-net stop superfetch
-net stop sysmain
+net stop superfetch /y
+net stop sysmain /y
 sc config wuauserv start= auto
 sc config superfetch start=disabled
 sc config sysmain start=disabled
