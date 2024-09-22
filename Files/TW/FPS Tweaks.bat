@@ -250,7 +250,6 @@ reg add "HKLM\Software\Policies\Microsoft\Windows\Psched\UserPriorityMapping" /v
 reg add "HKLM\Software\Policies\Microsoft\Windows\Psched\UserPriorityMapping" /v "ServiceTypeGuaranteed" /t reg_DWORD /d "7" /f
 reg add "HKLM\Software\Policies\Microsoft\Windows\Psched\UserPriorityMapping" /v "ServiceTypeNetworkControl" /t reg_DWORD /d "7" /f
 reg add "HKLM\Software\Policies\Microsoft\Windows\Psched\UserPriorityMapping" /v "ServiceTypeQualitative" /t reg_DWORD /d "7" /f
-reg add "HKLM\Software\Policies\Microsoft\Windows\BITS" /v "EnableBITSMaxBandwidth" /t reg_DWORD /d "0" /f
 reg add "HKLM\Software\Policies\Microsoft\Windows\NetCache" /v "PeerCachingLatencyThreshold" /t reg_DWORD /d "68435456" /f
 reg add "HKLM\SOFTWARE\Policies\Microsoft\PeerDist\Service" /v "Enable" /t reg_DWORD /d "1" /f
 reg add "HKLM\Software\Policies\Microsoft\Windows NT\DNSClient" /v "UpdateSecurityLevel" /t reg_DWORD /d "598" /f
@@ -765,7 +764,6 @@ reg add "HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Advanced" /v "S
 reg add "HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Advanced" /v "DontPrettyPath" /t reg_DWORD /d "0" /f 
 reg add "HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Advanced" /v "ShowInfoTip" /t reg_DWORD /d "1" /f 
 reg add "HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Advanced" /v "SeparateProcess" /t reg_DWORD /d "0" /f 
-reg add "HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Advanced" /v "IconsOnly" /t reg_DWORD /d "0" /f 
 reg add "HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Advanced" /v "ShowTypeOverlay" /t reg_DWORD /d "1" /f 
 reg add "HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Advanced" /v "ShowStatusBar" /t reg_DWORD /d "1" /f 
 reg add "HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Advanced" /v "ListviewAlphaSelect" /t reg_DWORD /d "0" /f 
@@ -821,12 +819,7 @@ reg add "HKLM\SYSTEM\CurrentControlSet\Control\PriorityControl" /v "ConvertibleS
 reg add "HKLM\SYSTEM\CurrentControlSet\Control\PriorityControl" /v "Win3PrioritySeparation" /t reg_DWORD /d "8" /f  
 reg add "HKLM\SOFTWARE\Microsoft\PolicyManager\current\device\Update" /v "ExcludeWUDriversInQualityUpdate" /t reg_DWORD /d "1" /f  
 reg add "HKLM\SOFTWARE\Microsoft\PolicyManager\default\Update" /v "ExcludeWUDriversInQualityUpdate" /t reg_DWORD /d "1" /f  
-reg add "HKLM\SOFTWARE\Microsoft\PolicyManager\default\Update\ExcludeWUDriversInQualityUpdate" /v "value" /t reg_DWORD /d "1" /f      
-reg add "HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\VisualEffects" /v "VisualFXSetting" /t reg_DWORD /d "3" /f   
-reg add "HKCU\Control Panel\Desktop" /v "FontSmoothing" /t reg_SZ /d "" /f      
-reg add "HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer" /v "ShellState" /t reg_BINARY /d "40000003E800000000000000000000000000000100000013000000000000007000000" /f   
-reg add "HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Advanced" /v "IconsOnly" /t reg_DWORD /d "1" /f     
-reg add "HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Advanced" /v "ListviewShadow" /t reg_DWORD /d "0" /f     
+reg add "HKLM\SOFTWARE\Microsoft\PolicyManager\default\Update\ExcludeWUDriversInQualityUpdate" /v "value" /t reg_DWORD /d "1" /f                    
 reg add "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\WUDF" /v "LogEnable" /t reg_DWORD /d "0" /f reg add "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\WUDF" /v "LogLevel" /t reg_DWORD /d "0" /f   
 reg add "HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\Privacy" /v "TailoredExperiencesWithDiagnosticDataEnabled" /t reg_DWORD /d "0" /f  
 reg add "HKEY_CURRENT_CONFIG\System\CurrentControlSet\SERVICES\TSDDD\DEVICE0" /v Attach.ToDesktop /t reg_DWORD /d 00000001 /f
@@ -910,11 +903,8 @@ reg add "HKLM\SYSTEM\CurrentControlSet\Services\CDPUserSvc" /v Start /t reg_DWOR
 reg add "HKLM\SYSTEM\CurrentControlSet\Services\PimIndexMaintenanceSvc" /v Start /t reg_DWORD /d "4" /f
 reg add "HKLM\SYSTEM\CurrentControlSet\Services\DeviceAssociationBrokerSvc" /v Start /t reg_DWORD /d "3" /f
 reg add "HKLM\SYSTEM\CurrentControlSet\Services\cbdhsvc" /v Start /t reg_DWORD /d "3" /f
-reg add "HKLM\SYSTEM\ControlSet001\Services\edgeupdatem" /v "Start" /t reg_DWORD /d "4" /f
-reg add "HKLM\SYSTEM\ControlSet001\Services\MicrosoftEdgeElevationService" /v "Start" /t reg_DWORD /d "4" /f
 reg add "HKLM\SYSTEM\ControlSet001\Services\ALG" /v "Start" /t reg_DWORD /d "4" /f
 reg add "HKLM\SYSTEM\ControlSet001\Services\icssvc" /v "Start" /t reg_DWORD /d "3" /f
-reg add "HKLM\SYSTEM\ControlSet001\Services\edgeupdate" /v "Start" /t reg_DWORD /d "4" /f
 reg add "HKLM\SYSTEM\ControlSet001\Services\shpamsvc" /v "Start" /t reg_DWORD /d "4" /f
 reg add "HKLM\SYSTEM\ControlSet001\Services\svsvc" /v "Start" /t reg_DWORD /d "4" /f
 reg add "HKLM\SYSTEM\ControlSet001\Services\MSiSCSI" /v "Start" /t reg_DWORD /d "4" /f
@@ -1060,7 +1050,6 @@ reg add "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer" /v "Max Cached
 reg add "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer" /v "AlwaysUnloaddLL" /t reg_DWORD /d "1" /f  
 reg add "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\AlwaysUnloaddLL" /v "Default" /t reg_DWORD /d "1" /f  
 reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" /v "EnableBalloonTips" /t reg_DWORD /d "0" /f  
-reg add "HKLM\SOFTWARE\Policies\Microsoft\MicrosoftEdge\PhishingFilter" /v "EnabledV9" /t reg_DWORD /d 0 /f
 reg add "HKLM\SYSTEM\currentcontrolset\control\session manager\Power" /v "CoalescingTimerInterval" /t reg_DWORD /d "0" /f   
 reg add "HKLM\SYSTEM\currentcontrolset\control\session manager\Memory Management" /v "CoalescingTimerInterval" /t reg_DWORD /d "0" /f       
 reg add "HKLM\SYSTEM\currentcontrolset\control\session manager" /v "CoalescingTimerInterval" /t reg_DWORD /d "0" /f   
@@ -1076,9 +1065,7 @@ reg add "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Multimedia\SystemProf
 reg add "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Multimedia\SystemProfile\Tasks\Games" /F /V "GPU Priority" /T reg_DWORD /d 8  
 reg add "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Multimedia\SystemProfile\Tasks\Games" /F /V "Priority" /T reg_DWORD /d 6  
 reg add "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Multimedia\SystemProfile\Tasks\Games" /F /V "Scheduling Category" /T reg_SZ /d "High"  
-reg add "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Multimedia\SystemProfile\Tasks\Games" /F /V "SFIO Priority" /T reg_SZ /d "High"    
-reg add "HKCU\Software\Policies\Microsoft\Windows\EdgeUI" /F /V "DisableMFUTracking" /T reg_DWORD /d 1  
-reg add "HKLM\SOFTWARE\Policies\Microsoft\Windows\EdgeUI" /F /V "DisableMFUTracking" /T reg_DWORD /d 1     
+reg add "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Multimedia\SystemProfile\Tasks\Games" /F /V "SFIO Priority" /T reg_SZ /d "High"        
 reg add "HKCU\Control Panel\International\User Profile" /F /V "HttpAcceptLanguageOptOut" /T reg_DWORD /d 1  
 reg add "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\CapabilityAccessManager\ConsentStore\broadFileSystemAccess" /F /V "Value" /T reg_SZ /d "Deny"  
 reg add "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\CapabilityAccessManager\ConsentStore\videosLibrary" /F /V "Value" /T reg_SZ /d "Deny"  
@@ -1097,8 +1084,7 @@ reg add "HKLM\SOFTWARE\Policies\Microsoft\Windows\DeliveryOptimization" /F /V "D
 reg add "HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\Explorer" /F /V "NoInstrumentation" /T reg_DWORD /d 1  
 reg add "HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\Explorer" /F /V "NoBalloonFeatureAdvertisements" /T reg_DWORD /d 1    
 reg add "HKLM\SOFTWARE\Policies\Microsoft\Windows\Explorer" /F /V "HidePeopleBar" /T reg_DWORD /d 1  
-reg add "HLEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\Explorer" /F /V "HideSCAHealth" /T reg_DWORD /d 1  
-reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\Themes\Personalize" /F /V "EnableTransparency" /T reg_DWORD /d 0  
+reg add "HLEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\Explorer" /F /V "HideSCAHealth" /T reg_DWORD /d 1    
 reg add "HKCU\SOFTWARE\Policies\Microsoft\Windows\CurrentVersion\QuietHours" /F /V "Enable" /T reg_DWORD /d 0  
 reg add "HKCU\SOFTWARE\Policies\Microsoft\Windows\CurrentVersion\PushNotifications" /F /V "NoTileApplicationNotification" /T reg_DWORD /d 1  
 reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\CDP" /F /V "CdpSessionUserAuthzPolicy" /T reg_DWORD /d 0  
@@ -1146,26 +1132,6 @@ reg add "HKLM\SOFTWARE\Policies\Microsoft\Windows\AppPrivacy" /F /V "LetAppsSync
 reg add "HKLM\SOFTWARE\Policies\Microsoft\Windows\AppPrivacy" /F /V "LetAppsAccessRadios" /T reg_DWORD /d   
 reg add "HKLM\SOFTWARE\Policies\Microsoft\Windows\AppPrivacy" /F /V "LetAppsAccessPhone" /T reg_DWORD /d   
 reg add "HKLM\SOFTWARE\Policies\Microsoft\Windows\AppPrivacy" /F /V "LetAppsRunInBackground" /T reg_DWORD /d  
-reg add "HKLM\SOFTWARE\Policies\Microsoft\Edge" /F /V "WalletDonationEnabled" /T reg_DWORD /d 0
-reg add "HKLM\SOFTWARE\Policies\Microsoft\Edge" /F /V "ConfigureDoNotTrack" /T reg_DWORD /d 1
-reg add "HKLM\SOFTWARE\Policies\Microsoft\Edge" /F /V "CryptoWalletEnabled" /T reg_DWORD /d 0
-reg add "HKLM\SOFTWARE\Policies\Microsoft\Edge" /F /V "EdgeCollectionsEnabled" /T reg_DWORD /d 0
-reg add "HKLM\SOFTWARE\Policies\Microsoft\Edge" /F /V "EdgeAssetDeliveryServiceEnabled" /T reg_DWORD /d 0
-reg add "HKLM\SOFTWARE\Policies\Microsoft\Edge" /F /V "DiagnosticData" /T reg_DWORD /d 0
-reg add "HKLM\SOFTWARE\Policies\Microsoft\Edge" /F /V "WebWidgetAllowed" /T reg_DWORD /d 0
-reg add "HKLM\SOFTWARE\Policies\Microsoft\Edge" /F /V "ShowMicrosoftRewards" /T reg_DWORD /d 0
-reg add "HKLM\SOFTWARE\Policies\Microsoft\Edge" /F /V "PersonalizationReportingEnabled" /T reg_DWORD /d 0
-reg add "HKLM\SOFTWARE\Policies\Microsoft\Edge" /F /V "MicrosoftEdgeInsiderPromotionEnabled" /T reg_DWORD /d 0
-reg add "HKLM\SOFTWARE\Policies\Microsoft\Edge" /F /V "EdgeShoppingAssistantEnabled" /T reg_DWORD /d 0
-reg add "HKLM\SOFTWARE\Policies\Microsoft\Edge" /F /V "EdgeFollowEnabled" /T reg_DWORD /d 0
-reg add "HKLM\SOFTWARE\Policies\Microsoft\Edge" /F /V "EdgeCollectionsEnabled" /T reg_DWORD /d 0
-reg add "HKLM\SOFTWARE\Policies\Microsoft\Edge" /F /V "AlternateErrorPagesEnabled" /T reg_DWORD /d 0
-reg add "HKLM\SOFTWARE\Policies\Microsoft\Edge" /F /V "ConfigureDoNotTrack" /T reg_DWORD /d 1
-reg add "HKLM\SOFTWARE\Policies\Microsoft\Edge" /F /V "UserFeedbackAllowed" /T reg_DWORD /d 0
-reg add "HKLM\SOFTWARE\Policies\Microsoft\Edge" /F /V "HideFirstRunExperience" /T reg_DWORD /d 1
-reg add "HKLM\SOFTWARE\Policies\Microsoft\Edge" /F /V "ShowRecommendationsEnabled" /T reg_DWORD /d 0
-reg add "HKLM\SOFTWARE\Policies\Microsoft\Edge" /F /V "PersonalizationReportingEnabled" /T reg_DWORD /d 0
-reg add "HKLM\SOFTWARE\Policies\Microsoft\Edge" /F /V "EdgeEnhanceImagesEnabled" /T reg_DWORD /d 0
 reg add "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\Explorer" /F /V "NoDriveTypeAutoRun" /T reg_DWORD /d 55  
 reg add "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\Explorer" /F /V "NoAutorun" /T reg_DWORD /d 1  
 reg add "HKLM\SOFTWARE\Policies\Microsoft\Biometrics" /F /V "Enabled" /T reg_DWORD /d 0  
@@ -1199,8 +1165,7 @@ reg add "HKLM\SOFTWARE\Policies\Microsoft\Windows\DataCollection" /F /V "AllowDe
 reg add "HKLM\SOFTWARE\Policies\Microsoft\Windows\DataCollection" /F /V "AllowTelemetry" /T reg_DWORD /d 0  
 reg add "HKLM\SOFTWARE\Policies\Microsoft\Windows\DataCollection" /F /V "AllowUpdateComplianceProcessing" /T reg_DWORD /d 0  
 reg add "HKLM\SOFTWARE\Policies\Microsoft\Windows\DataCollection" /F /V "AllowWUfBCloudProcessing" /T reg_DWORD /d 0  
-reg add "HKLM\SOFTWARE\Policies\Microsoft\Windows\DataCollection" /F /V "DisableEnterpriseAuthProxy" /T reg_DWORD /d 1  
-reg add "HKLM\SOFTWARE\Policies\Microsoft\Windows\DataCollection" /F /V "MicrosoftEdgeDataOptIn" /T reg_DWORD /d 0  
+reg add "HKLM\SOFTWARE\Policies\Microsoft\Windows\DataCollection" /F /V "DisableEnterpriseAuthProxy" /T reg_DWORD /d 1   
 reg add "HKLM\SOFTWARE\Policies\Microsoft\Windows\DataCollection" /F /V "DisableTelemetryOptInChangeNotification" /T reg_DWORD /d 1  
 reg add "HKLM\SOFTWARE\Policies\Microsoft\Windows\DataCollection" /F /V "DisableTelemetryOptInSettingsUx" /T reg_DWORD /d 1  
 reg add "HKLM\SOFTWARE\Policies\Microsoft\Windows\DataCollection" /F /V "DisableDiagnosticDataViewer" /T reg_DWORD /d 1  
@@ -1249,10 +1214,8 @@ reg add "HKLM\Software\Policies\Microsoft\Windows NT\CurrentVersion\Software Pro
 reg add "HKLM\SYSTEM\currentcontrolset\control\session manager\Power" /v "SleepStudyDisabled" /t reg_DWORD /d "1" /f 
 reg add "HKLM\Software\Microsoft\FTH" /F /V "Enabled" /T reg_DWORD /d 0 
 reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\AppHost" /v "EnableWebContentEvaluation" /t reg_DWORD /d "0" /f   
-reg add "HKCU\Software\Classes\Local Settings\Software\Microsoft\Windows\CurrentVersion\AppContainer\Storage\microsoft.microsoftedge_8wekyb3d8bbwe\MicrosoftEdge\PhishingFilter" /v "EnabledV9" /t reg_DWORD /d "0" /f
-reg add "HKLM\SOFTWARE\Policies\Microsoft\Windows Defender" /v DisableAntiSpyware /t reg_DWORD /d 1 /f
 reg add "HKLM\SOFTWARE\Policies\Microsoft\Windows Defender\Spynet" /v SpyNetReporting /t reg_DWORD /d 0 /f
-reg add "HKLM\SOFTWARE\Policies\Microsoft\Windows Defender\Spynet" /v SubmitSamplesConsent /t reg_DWORD /d  /f
+reg add "HKLM\SOFTWARE\Policies\Microsoft\Windows Defender\Spynet" /v SubmitSamplesConsent /t reg_DWORD /d 0 /f
 reg add "HKLM\SOFTWARE\Policies\Microsoft\Windows Defender\Spynet" /v DontReportInfectionInformation /t reg_DWORD /d 1 /f
 reg add "HKLM\Software\Microsoft\PolicyManager\default\WiFi\AllowAutoConnectToWiFiSenseHotspots" /v "value" /t reg_DWORD /d "0" /f    
 reg add "HKLM\Software\Microsoft\Windows\CurrentVersion\DeliveryOptimization\Config" /v "DownloadMode" /t reg_DWORD /d "0" /f   
@@ -1376,8 +1339,6 @@ reg add "HKCU\Software\Microsoft\IME\15.0\IMETC" /v "Include GB18030 Characters"
 reg add "HKCU\Software\Microsoft\IME\15.0\IMETC" /v "Include Unicode Characters" /t reg_SZ /d "0x00000000" /f
 reg add "HKCU\Software\Microsoft\IME\15.0\IMETC" /v "Enable Inline Candidate Swtch" /t reg_SZ /d "0x00000001" /f
 reg add "HKCU\Software\Microsoft\IME\15.0\IMETC" /v "Enable Warning Beep Feedback" /t reg_SZ /d "0x00000001" /f
-reg add "HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Advanced" /v "IconsOnly" /t reg_DWORD /d "0" /f
-reg add "HKCU\Software\Microsoft\Windows\DWM" /v "EnableAeroPeek" /t reg_DWORD /d "0" /f
 reg add "HKCU\Control Panel\Mouse" /v "MouseSpeed" /t reg_SZ /d "0" /f
 reg add "HKCU\Control Panel\Mouse" /v MouseSensitivity /t reg_SZ /d 10 /f
 reg add "HKCU\Control Panel\Mouse" /v MouseSpeed /t reg_SZ /d 0 /f
@@ -1595,7 +1556,6 @@ reg add "HKLM\SOFTWARE\Policies\Microsoft\Windows\DataCollection" /F /V "AllowTe
 reg add "HKLM\SOFTWARE\Policies\Microsoft\Windows\DataCollection" /F /V "AllowUpdateComplianceProcessing" /T reg_DWORD /d 0 
 reg add "HKLM\SOFTWARE\Policies\Microsoft\Windows\DataCollection" /F /V "AllowWUfBCloudProcessing" /T reg_DWORD /d 0 
 reg add "HKLM\SOFTWARE\Policies\Microsoft\Windows\DataCollection" /F /V "DisableEnterpriseAuthProxy" /T reg_DWORD /d 1 
-reg add "HKLM\SOFTWARE\Policies\Microsoft\Windows\DataCollection" /F /V "MicrosoftEdgeDataOptIn" /T reg_DWORD /d 0 
 reg add "HKLM\SOFTWARE\Policies\Microsoft\Windows\DataCollection" /F /V "DisableTelemetryOptInChangeNotification" /T reg_DWORD /d 1 
 reg add "HKLM\SOFTWARE\Policies\Microsoft\Windows\DataCollection" /F /V "DisableTelemetryOptInSettingsUx" /T reg_DWORD /d 1 
 reg add "HKLM\SOFTWARE\Policies\Microsoft\Windows\DataCollection" /F /V "DisableDiagnosticDataViewer" /T reg_DWORD /d 1 
@@ -1677,6 +1637,37 @@ reg add "HKEY_CURRENT_USER\SOFTWARE\Tencent\MobileGamePC\TLS 1.\Client" /v "Disa
 reg add "HKEY_CURRENT_USER\SOFTWARE\Tencent\MobileGamePC\TLS 1.\Client" /v "Enabled" /t reg_DWORD /d 1 /f
 reg add "HKEY_CURRENT_USER\SOFTWARE\Tencent\MobileGamePC\TLS 1.3\Client" /v "DisabledByDefault" /t reg_DWORD /d 0 /f
 reg add "HKEY_CURRENT_USER\SOFTWARE\Tencent\MobileGamePC\TLS 1.3\Client" /v "Enabled" /t reg_DWORD /d 1 /f
+CLS
+reg add "HKLM\SYSTEM\ControlSet001\Services\edgeupdatem" /v "Start" /t reg_DWORD /d "2" /f
+reg add "HKLM\SYSTEM\ControlSet001\Services\MicrosoftEdgeElevationService" /v "Start" /t reg_DWORD /d "2" /f
+reg add "HKLM\SYSTEM\ControlSet001\Services\edgeupdate" /v "Start" /t reg_DWORD /d "2" /f
+reg add "HKLM\SOFTWARE\Policies\Microsoft\MicrosoftEdge\PhishingFilter" /v "EnabledV9" /t reg_DWORD /d 0 /f
+reg add "HKLM\SOFTWARE\Policies\Microsoft\Edge" /F /V "WalletDonationEnabled" /T reg_DWORD /d 0
+reg add "HKLM\SOFTWARE\Policies\Microsoft\Edge" /F /V "ConfigureDoNotTrack" /T reg_DWORD /d 1
+reg add "HKLM\SOFTWARE\Policies\Microsoft\Edge" /F /V "CryptoWalletEnabled" /T reg_DWORD /d 0
+reg add "HKLM\SOFTWARE\Policies\Microsoft\Edge" /F /V "EdgeCollectionsEnabled" /T reg_DWORD /d 0
+reg add "HKLM\SOFTWARE\Policies\Microsoft\Edge" /F /V "EdgeAssetDeliveryServiceEnabled" /T reg_DWORD /d 0
+reg add "HKLM\SOFTWARE\Policies\Microsoft\Edge" /F /V "DiagnosticData" /T reg_DWORD /d 0
+reg add "HKLM\SOFTWARE\Policies\Microsoft\Edge" /F /V "WebWidgetAllowed" /T reg_DWORD /d 0
+reg add "HKLM\SOFTWARE\Policies\Microsoft\Edge" /F /V "ShowMicrosoftRewards" /T reg_DWORD /d 0
+reg add "HKLM\SOFTWARE\Policies\Microsoft\Edge" /F /V "PersonalizationReportingEnabled" /T reg_DWORD /d 0
+reg add "HKLM\SOFTWARE\Policies\Microsoft\Edge" /F /V "MicrosoftEdgeInsiderPromotionEnabled" /T reg_DWORD /d 0
+reg add "HKLM\SOFTWARE\Policies\Microsoft\Edge" /F /V "EdgeShoppingAssistantEnabled" /T reg_DWORD /d 0
+reg add "HKLM\SOFTWARE\Policies\Microsoft\Edge" /F /V "EdgeFollowEnabled" /T reg_DWORD /d 0
+reg add "HKLM\SOFTWARE\Policies\Microsoft\Edge" /F /V "EdgeCollectionsEnabled" /T reg_DWORD /d 0
+reg add "HKLM\SOFTWARE\Policies\Microsoft\Edge" /F /V "AlternateErrorPagesEnabled" /T reg_DWORD /d 0
+reg add "HKLM\SOFTWARE\Policies\Microsoft\Edge" /F /V "ConfigureDoNotTrack" /T reg_DWORD /d 1
+reg add "HKLM\SOFTWARE\Policies\Microsoft\Edge" /F /V "UserFeedbackAllowed" /T reg_DWORD /d 0
+reg add "HKLM\SOFTWARE\Policies\Microsoft\Edge" /F /V "HideFirstRunExperience" /T reg_DWORD /d 1
+reg add "HKLM\SOFTWARE\Policies\Microsoft\Edge" /F /V "ShowRecommendationsEnabled" /T reg_DWORD /d 0
+reg add "HKLM\SOFTWARE\Policies\Microsoft\Edge" /F /V "PersonalizationReportingEnabled" /T reg_DWORD /d 0
+reg add "HKLM\SOFTWARE\Policies\Microsoft\Edge" /F /V "EdgeEnhanceImagesEnabled" /T reg_DWORD /d 0
+reg add "HKLM\SOFTWARE\Policies\Microsoft\Windows\DataCollection" /F /V "MicrosoftEdgeDataOptIn" /T reg_DWORD /d 0 
+reg add "HKLM\SOFTWARE\Policies\Microsoft\Windows\DataCollection" /F /V "MicrosoftEdgeDataOptIn" /T reg_DWORD /d 0 
+reg add "HKLM\SOFTWARE\Policies\Microsoft\Windows\EdgeUI" /F /V "DisableMFUTracking" /T reg_DWORD /d 1 
+reg add "HKCU\Software\Policies\Microsoft\Windows\EdgeUI" /F /V "DisableMFUTracking" /T reg_DWORD /d 1 
+reg add "HKCU\Software\Classes\Local Settings\Software\Microsoft\Windows\CurrentVersion\AppContainer\Storage\microsoft.microsoftedge_8wekyb3d8bbwe\MicrosoftEdge\PhishingFilter" /v "EnabledV9" /t reg_DWORD /d "0" /f
+reg add "HKCU\Software\Microsoft\MicrosoftEdge\Main" /v "PreventRunningInBackground" /t reg_DWORD /d 1 /f
 CLS
 reg delete "HKCR\Control Panel\Mouse" /v SmoothMouseXCurve /f
 reg delete "HKCR\Control Panel\Mouse" /v SmoothMouseYCurve /f 
@@ -2205,18 +2196,6 @@ rmdir /S /Q C:\Windows\SystemApps\Microsoft.XboxGameCallableUI_cw5n1htxyewy
 icaCLS "C:\Windows\SystemApps\Microsoft.XboxApp_48.49.31001.0_x64__8wekyb3d8bbwe" /t /c /q /grant administrators:F
 takeown /F C:\Windows\SystemApps\Microsoft.XboxApp_48.49.31001.0_x64__8wekyb3d8bbwe /R /D Y
 rmdir /S /Q C:\Windows\SystemApps\Microsoft.XboxApp_48.49.31001.0_x64__8wekyb3d8bbwe
-CLS
-ECHO Update registry settings for device parameters
-for /f %%a in ('wmic PATH Win3_PnPEntity GET DeviceID ^| findstr /l "USB\VID_"') do (
-    C:\Windows\SetACL.exe -on "HKLM\SYSTEM\CurrentControlSet\Enum\%%a\Device Parameters" -ot reg -actn setowner -ownr "n:Administrators"
-    C:\Windows\SetACL.exe -on "HKLM\SYSTEM\CurrentControlSet\Enum\%%a\Device Parameters" -ot reg -actn ace -ace "n:Administrators;p:full"
-    reg.exe add "HKLM\SYSTEM\CurrentControlSet\Enum\%%a\Device Parameters" /v SelectiveSuspendOn /t REG_DWORD /d 00000000 /f
-    reg.exe add "HKLM\SYSTEM\CurrentControlSet\Enum\%%a\Device Parameters" /v SelectiveSuspendEnabled /t REG_BINARY /d 00 /f
-)
-for /f %%a in ('wmic PATH Win3_USBHub GET DeviceID ^| findstr /l "USB\ROOT_HUB"') do (
-    C:\Windows\SetACL.exe -on "HKLM\SYSTEM\CurrentControlSet\Enum\%%a\Device Parameters\WDF" -ot reg -actn setowner -ownr "n:Administrators"
-    reg.exe add "HKLM\SYSTEM\CurrentControlSet\Enum\%%a\Device Parameters\WDF" /v IdleInWorkingState /t REG_DWORD /d 00000000 /f
-)
 CLS
 ECHO Network adapter bindings
 Powershell -command "& {Enable-NetAdapterBinding -Name '*' -ComponentID ms_tcpip}"
