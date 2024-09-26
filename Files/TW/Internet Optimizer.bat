@@ -130,36 +130,47 @@ Reg Add "HKLM\Software\Policies\Microsoft\Windows\Psched\UserPriorityMapping" /v
 Reg Add "HKLM\Software\Policies\Microsoft\Windows\Psched\UserPriorityMapping" /v "ServiceTypeNetworkControl" /t REG_DWORD /d "7" /f
 Reg Add "HKLM\Software\Policies\Microsoft\Windows\Psched\UserPriorityMapping" /v "ServiceTypeQualitative" /t REG_DWORD /d "7" /f
 cls
-Netsh Interface Ip Show Config
-Netsh Winsock Reset
-Netsh Int Tcp Show Global
-Netsh Int Tcp Set Supplemental Internet Congestionprovider=ctcp
-Netsh Int Tcp Set Global InitialRto=2000
-Netsh Int Tcp Set Global Dca=Enabled
-Netsh Int Tcp Set Global Netdma=Disabled
-Netsh Int Tcp Set Global Timestamps=Disabled
-Netsh Int Tcp Set Global Nonsackrttresiliency=Disabled
-Netsh Int Tcp Set Global Rss=Enabled >nul 2>&1
-Netsh Int Tcp Set Global MaxSynRetransmissions=2
-Netsh Int Tcp Set Global Fastopen=Enabled
-Netsh Int Tcp Set Global Netdma=Enabled
-Netsh Int Tcp Set Global Congestionprovider=ctcp
-Netsh Int Tcp Set Global Ecncapability=Enabled
-Netsh Int Tcp Set Global Autotuninglevel=Disabled
-Netsh Int Tcp Set Global Chimney=Enabled
-Netsh Int Ipv4 Set Dynamicportrange Protocol=tcp Start=1025 Num=64511
-Netsh Int Ipv4 Set Glob Defaultcurhoplimit=255
-Netsh Int Ip Reset
-Netsh Interface Tcp Set Global Ecncapability=Disabled
-Netsh Interface Ipv4 Set Subinterface “Ethernet” Mtu=1500 Store=persistent
-Netsh Interface Ipv4 Reset
-Netsh Interface Ipv6 Reset
-Netsh Advfirewall Reset
-Netsh Advfirewall Firewall Add Rule Name="StopThrottling" Dir=in Action=block Remoteip=173.194.55.0/24,206.111.0.0/16 Enable=yes
-Netsh Advfirewall Firewall Add Rule Name="Block Windows Telemetry" Dir=in Action=block Remoteip=134.170.30.202,137.116.81.24,157.56.106.189,184.86.53.99,2.22.61.43,2.22.61.66,204.79.197.200,23.218.212.69,65.39.117.23,65.55.108.23,64.4.54.254 Enable=yes
-Netsh Advfirewall Firewall Add Rule Name="Block NVIDIA Telemetry" Dir=in Action=block Remoteip=8.36.80.197,8.36.80.224,8.36.80.252,8.36.113.118,8.36.113.141,8.36.80.230,8.36.80.231,8.36.113.126,8.36.80.195,8.36.80.217,8.36.80.237,8.36.80.246,8.36.113.116,8.36.113.139,8.36.80.244,216.228.121.209 Enable=yes
-Wmic process where ProcessId=%pid% CALL setpriority "high"
+fsutil behavior set memoryusage 2
+netsh Advfirewall Firewall Add Rule Name="Block NVIDIA Telemetry" Dir=in Action=block Remoteip=8.36.80.197,8.36.80.224,8.36.80.252,8.36.113.118,8.36.113.141,8.36.80.230,8.36.80.231,8.36.113.126,8.36.80.195,8.36.80.217,8.36.80.237,8.36.80.246,8.36.113.116,8.36.113.139,8.36.80.244,216.228.121.209 Enable=yes
+netsh Advfirewall Firewall Add Rule Name="Block Windows Telemetry" Dir=in Action=block Remoteip=134.170.30.202,137.116.81.24,157.56.106.189,184.86.53.99,2.22.61.43,2.22.61.66,204.79.197.200,23.218.212.69,65.39.117.23,65.55.108.23,64.4.54.254 Enable=yes
+netsh Advfirewall Firewall Add Rule Name="StopThrottling" Dir=in Action=block Remoteip=173.194.55.0/24,206.111.0.0/16 Enable=yes
+netsh Advfirewall Reset
+netsh Int Ip Reset
+netsh int ip set Global icmpredirects=Disabled
+netsh int ip set Global multicastforwarding=Disabled
+netsh int ip set Global neighborcachelimit=4096
+netsh int ip set Global taskoffload=Disabled
+netsh Int Ipv4 Set Dynamicportrange Protocol=tcp Start=1025 Num=64511
+netsh Int Ipv4 Set Global Defaultcurhoplimit=255
+netsh int isatap set state disable
+netsh int tcp set Global autotuninglevel=Normal
+netsh Int Tcp Set Global Chimney=Enabled
+netsh Int Tcp Set Global Congestionprovider=ctcp
+netsh Int Tcp Set Global Dca=Enabled
+netsh int tcp set global ecncapability=Disabled
+netsh Int Tcp Set Global Fastopen=Enabled
+netsh Int Tcp Set Global InitialRto=2000
+netsh Int Tcp Set Global MaxSynRetransmissions=2
+netsh int tcp set global netdma=Disabled
+netsh int tcp set Global nonsackrttresiliency=Disabled
+netsh int tcp set Global Rcs=Disabled
+netsh Int Tcp Set Global Rss=Enabled
+netsh Int Tcp Set Global Timestamps=Disabled
+netsh int tcp set heuristics Disabled
+netsh int tcp set security mpp=Disabled
+netsh int tcp set security profiles=Disabled
+netsh Int Tcp Set Supplemental Internet Congestionprovider=ctcp
+netsh Int Tcp Show Global
+netsh interface 6to4 set state Disabled
+netsh Interface Ip Show Config
+netsh Interface Ipv4 Reset
+netsh Interface Ipv4 Set Subinterface “Ethernet” Mtu=1500 Store=persistent
+netsh Interface Ipv6 Reset
+netsh Interface Tcp Set Global Ecncapability=Disabled
+netsh interface teredo set state Disabled
+netsh Winsock Reset
 Wmic Nicconfig Where Ipenabled=true Call Setdnsserversearchorder ("8.8.8.8","8.8.4.4")
+Wmic process where ProcessId=%pid% CALL setpriority "high"
 Cls
 Ipconfig /all
 Ipconfig /registerdns
@@ -170,6 +181,20 @@ Ipconfig /flushdns
 Nbtstat -r
 Nbtstat -rr
 CLS
+ECHO Network adapter bindings
+powershell -command "& {Enable-NetAdapterBinding -Name '*' -ComponentID ms_tcpip}"
+Powershell -command "& {Disable-NetAdapterBinding -Name '*' -ComponentID ms_lldp}"
+Powershell -command "& {Disable-NetAdapterBinding -Name '*' -ComponentID ms_lltdio}"
+Powershell -command "& {Disable-NetAdapterBinding -Name '*' -ComponentID ms_implat}"
+Powershell -command "& {Disable-NetAdapterBinding -Name '*' -ComponentID ms_rspndr}"
+Powershell -command "& {Disable-NetAdapterBinding -Name '*' -ComponentID ms_tcpip6}"
+Powershell -command "& {Disable-NetAdapterBinding -Name '*' -ComponentID ms_server}"
+Powershell -command "& {Disable-NetAdapterBinding -Name '*' -ComponentID ms_mSClient}"
+Powershell -command "& {Disable-NetAdapterBinding -Name '*' -ComponentID ms_pacer}"
+PowerShell Disable-NetAdapterLso -Name "*"
+powershell "ForEach($adapter In Get-NetAdapter){Disable-NetAdapterPowerManagement -Name $adapter.Name -ErrorAction SilentlyContinue}"
+powershell "ForEach($adapter In Get-NetAdapter){Disable-NetAdapterLso -Name $adapter.Name -ErrorAction SilentlyContinue}"
+Cls
 echo.
 echo.═══════════════════════════════════════════════════════════
 echo. Processed Successfully, Please Restart Your PC...  
