@@ -21,9 +21,6 @@ ECHO                                                 Logged in as %USERNAME%
 ECHO.
 ECHO FPS TWEAKS STARTING
 :FPS Tweaks [PC Optimizer]
-CLS
-CLS
-ECHO Tweaks For PUBG
 Reg Add "HKCR\CLSID\{018D5C66-4533-4307-9B53-4DEED1FE6}" /v "System.IsPinnedToNameSpaceTree" /t reg_DWORD /d 0 /f
 Reg Add "HKCR\CLSID\{018D5C66-4533-4307-9B53-4DEED1FE6}\ShellFolder" /v "Attributes" /t reg_DWORD /d 0 /f
 Reg Add "HKCR\Software\Microsoft\Windows\CurrentVersion\Internet Settings" /v "MaxConnectionsPer1_0Server" /t reg_DWORD /d 10 /f
